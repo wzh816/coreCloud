@@ -1,0 +1,11 @@
+server:
+  port: 10086 #端口号
+spring:
+  application:
+    name: eureka_server #应用名称，会在Eureka中显示
+eureka:
+  client:
+    service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
+      defaultZone: http://127.0.0.1:10087/eureka
+  server:
+    eviction-interval-timer-in-ms: 10000 #服务提供方并不一定会正常下线,可以通过`eureka.server.eviction-interval-timer-in-ms`参数对其进行修改，单位是毫秒，生产环境不要修改
